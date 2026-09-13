@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { useWeb3 } from './Web3Provider';
 import { getRoute, buildRoute } from '@/lib/kyberswap';
 import { erc20Abi, vTokenAbi } from '@/lib/abis';
-import { ArrowRight, Loader2, TrendingUp, ShieldCheck, ArrowDownUp, LogOut, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Loader2, TrendingUp, ShieldCheck, ArrowDownUp, LogOut, CheckCircle2, ExternalLink } from 'lucide-react';
 import { parseUnits, formatUnits, formatEther } from 'viem';
 
 import { bsc } from 'viem/chains';
@@ -22,7 +22,7 @@ export const POOLS = [
     address: '0xb0b84d294e0c75a6abe60171b70edeb2efd14a1b',
     decimals: 18,
     type: 'Liquid Staking',
-    apy: '8.2%', // Update apy
+    apy: '8.2%',
     link: 'https://lista.org/',
     description: 'Stake BNB to receive slisBNB, auto-compounding staking yields.'
   },
@@ -33,7 +33,7 @@ export const POOLS = [
     address: '0xc2e9d07f66a89c44062459a47a0d2dc038e4fb16',
     decimals: 18,
     type: 'Liquid Staking',
-    apy: '4.8%', // Update apy
+    apy: '4.8%',
     link: 'https://bnb.pstake.finance/',
     description: 'Stake BNB to receive stkBNB by pSTAKE Finance. Earns auto-compounding staking rewards.'
   },
@@ -44,7 +44,7 @@ export const POOLS = [
     address: '0x1bdd3cf7f79cfb8edbb955f20ad99211551ba275',
     decimals: 18,
     type: 'Liquid Staking',
-    apy: '5.1%', // Update apy
+    apy: '5.1%',
     link: 'https://www.staderlabs.com/bnb/liquid-staking/bnbx/',
     description: 'Stake BNB to receive BNBx by Stader Labs. Earns auto-compounding staking rewards.'
   },
@@ -55,7 +55,7 @@ export const POOLS = [
     address: '0xfd5840cd36d94d7229439859c0112a4185bc0255',
     decimals: 8,
     type: 'Lending Vault',
-    apy: '8.1%', // Update apy
+    apy: '8.1%',
     link: 'https://app.venus.io/',
     description: 'Managed Vault: Automatically swaps BNB to USDT and supplies it to Venus Protocol to earn lending yield.',
     manager: 'venus',
@@ -69,7 +69,7 @@ export const POOLS = [
     address: '0xeca88125a5adbe82614ffc12d0db554e2e2867c8',
     decimals: 8,
     type: 'Lending Vault',
-    apy: '9.4%', // Update apy
+    apy: '9.4%',
     link: 'https://app.venus.io/',
     description: 'Managed Vault: Automatically swaps BNB to USDC and supplies it to Venus Protocol to earn lending yield.',
     manager: 'venus',
@@ -83,7 +83,7 @@ export const POOLS = [
     address: '0x882c173bc7ff3b7786ca16dfed3dfffb9ee7847b',
     decimals: 8,
     type: 'Lending Vault',
-    apy: '1.2%', // Update apy
+    apy: '1.2%',
     link: 'https://app.venus.io/',
     description: 'Managed Vault: Automatically swaps BNB to BTCB and supplies it to Venus Protocol.',
     manager: 'venus',
@@ -97,24 +97,11 @@ export const POOLS = [
     address: '0xf508fcd89b8bd15579dc79a6827cb4686a3592c8',
     decimals: 8,
     type: 'Lending Vault',
-    apy: '1.8%', // Update apy
+    apy: '1.8%',
     link: 'https://app.venus.io/',
     description: 'Managed Vault: Automatically swaps BNB to ETH and supplies it to Venus Protocol.',
     manager: 'venus',
     underlyingToken: '0x2170ed0880ac9a755fd29b2688956bd959f933f8', // ETH
-    underlyingDecimals: 18
-  },
-  {
-    id: 'fintechai',
-    name: 'FintechAi Yield Vault',
-    symbol: 'FINTECH',
-    address: '0x0000000000000000000000000000000000000000', // Unused directly
-    decimals: 18,
-    type: 'Staking Partner',
-    apy: '1048.0%',
-    description: 'High yield staking vault with flexible or lockup options (Up to 1048% APY for 720 days). Automatically swaps your BNB to USDC for seamless staking entry.',
-    manager: 'fintechai',
-    underlyingToken: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d', // USDC
     underlyingDecimals: 18
   },
   {
@@ -124,35 +111,17 @@ export const POOLS = [
     address: '0x86ac3974e2bd0d60825230fa6f355ff11409df5c',
     decimals: 8,
     type: 'Defi Protocol',
-    apy: '14.2%', // Update apy
+    apy: '14.2%',
     link: 'https://app.venus.io/',
-    description: 'High-speed auto-compounding protocol via Venus updated 2026 logic. Stakes CAKE for high multiplier lending yields.',
+    description: 'High-speed auto-compounding protocol via Venus updated logic. Stakes CAKE for high multiplier lending yields.',
     manager: 'venus',
     underlyingToken: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82', // CAKE
     underlyingDecimals: 18
-  },
-  {
-    id: 'usdc',
-    name: 'USD Coin',
-    symbol: 'USDC',
-    address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
-    decimals: 18,
-    type: 'Stablecoin',
-    description: 'Circle USD Coin, a fully collateralized US Dollar stablecoin.'
-  },
-  {
-    id: 'cake',
-    name: 'PancakeSwap Token',
-    symbol: 'CAKE',
-    address: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    decimals: 18,
-    type: 'Ecosystem',
-    description: 'Primary token of the PancakeSwap ecosystem, acts as a volatile position.'
   }
 ];
 
 export function Dashboard() {
-  const { address, isConnected } = useWeb3();
+  const { address, isConnected, connect } = useWeb3();
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">
@@ -177,19 +146,37 @@ export function Dashboard() {
         </div>
       </div>
 
-      {!isConnected ? (
-        <div className="bg-slate-900 border border-white/5 rounded-2xl p-10 text-center">
-          <ShieldCheck className="w-12 h-12 text-slate-500 mx-auto mb-4" />
-          <h2 className="text-xl font-medium text-slate-200 mb-2">Wallet Disconnected</h2>
-          <p className="text-slate-400">Please connect your Web3 wallet to load your positions and start managing yield strategies.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {POOLS.map((pool) => (
-            <PoolCard key={pool.id} pool={pool} userAddress={address} />
-          ))}
+      {!isConnected && (
+        <div className="mb-8 p-4 sm:p-5 rounded-2xl border border-emerald-500/20 bg-emerald-950/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-white">Public Vault Explorer (Read-Only Mode)</p>
+              <p className="text-xs text-slate-400">
+                Browsing active vaults and live APYs. Connect your Web3 wallet to deposit, withdraw, or track your real-time positions.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => connect()}
+            className="px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shrink-0"
+          >
+            Connect Wallet
+          </button>
         </div>
       )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {POOLS.map((pool) => (
+          <PoolCard
+            key={pool.id}
+            pool={pool}
+            userAddress={address}
+            isConnected={isConnected}
+            connect={connect}
+          />
+        ))}
+      </div>
 
       {/* Footer Branding section */}
       <footer className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
@@ -212,7 +199,17 @@ export function Dashboard() {
   );
 }
 
-function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `0x${string}` | null }) {
+function PoolCard({
+  pool,
+  userAddress,
+  isConnected,
+  connect
+}: {
+  pool: typeof POOLS[0];
+  userAddress: `0x${string}` | null;
+  isConnected: boolean;
+  connect: () => void;
+}) {
   const { client, publicClient } = useWeb3();
   const [isOpen, setIsOpen] = useState(false);
   const [action, setAction] = useState<'enter' | 'exit'>('enter');
@@ -227,7 +224,12 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
   const [usdcBalance, setUsdcBalance] = useState('0');
 
   const fetchBalances = async () => {
-    if (!publicClient || !userAddress) return;
+    if (!publicClient || !userAddress) {
+      setBnbBalance('0');
+      setUsdcBalance('0');
+      setTokenBalance('0');
+      return;
+    }
     
     try {
       const bBalance = await publicClient.getBalance({ address: userAddress });
@@ -252,7 +254,7 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
 
     try {
       let tBalance: bigint | number = 0;
-      const targetAddress = pool.manager === 'fintechai' ? pool.underlyingToken : pool.address;
+      const targetAddress = pool.address;
       if (targetAddress && targetAddress !== '' && targetAddress !== '0x0000000000000000000000000000000000000000') {
          tBalance = await publicClient.readContract({
            address: targetAddress as `0x${string}`,
@@ -275,38 +277,34 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
   }, [publicClient, userAddress]);
 
   const formattedTokenBalance = formatUnits(BigInt(tokenBalance), pool.decimals);
-  const hasPosition = parseFloat(formattedTokenBalance) > 0;
-  
+  const hasPosition = isConnected && BigInt(tokenBalance) > BigInt(0);
+
   const getUnderlyingSymbol = () => {
-    if (!pool.underlyingToken) return '';
-    const t = pool.underlyingToken.toLowerCase();
-    if (t === '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d') return 'USDC';
-    if (t === '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c') return 'BTCB';
-    if (t === '0x2170ed0880ac9a755fd29b2688956bd959f933f8') return 'ETH';
-    if (t === '0x55d398326f99059ff775485246999027b3197955') return 'USDT';
-    return 'Token';
+    if (pool.manager === 'venus') {
+       return pool.symbol.replace('v', '');
+    }
+    return pool.symbol;
   };
 
   const fetchQuote = async (val: string) => {
     setAmount(val);
-    setErrorMsg('');
     if (!val || parseFloat(val) <= 0) {
       setRoute(null);
       return;
     }
-
     setLoadingRoute(true);
+    setErrorMsg('');
+
     try {
       const isEnter = action === 'enter';
       let targetToken = pool.address;
       let targetDecimals = pool.decimals;
 
-      if (pool.manager === 'venus' || pool.manager === 'fintechai') {
+      if (pool.manager === 'venus') {
          targetToken = pool.underlyingToken!;
          targetDecimals = pool.underlyingDecimals!;
          
-         if (!isEnter && pool.manager === 'venus') {
-             // For Venus exit, we skip Kyber quoting for now as the exact amount is calc'd during execution
+         if (!isEnter) {
              setRoute({ isManagedExit: true, amountOut: '0' });
              setLoadingRoute(false);
              return;
@@ -321,26 +319,26 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
          else tokenOut = NATIVE_BNB; 
       }
       
-      let decimalsIn = isEnter ? 18 : targetDecimals;
+      const decimalsIn = isEnter ? 18 : targetDecimals;
       let rawAmountBigInt = parseUnits(val, decimalsIn);
 
-      // Smart balance/gas adaptation to prevent transaction failures
-      if (isEnter) {
+      // Smart balance/gas adaptation only when wallet is connected
+      if (isEnter && isConnected && userAddress) {
          if (tokenIn === USDC) {
             const uBal = parseUnits(usdcBalance, 18);
-            if (rawAmountBigInt > uBal) {
+            if (rawAmountBigInt > uBal && uBal > BigInt(0)) {
                rawAmountBigInt = uBal;
             }
          } else if (tokenIn === NATIVE_BNB) {
             const bBal = parseUnits(bnbBalance, 18);
-            const gasReserve = parseUnits('0.005', 18); // Keep 0.005 BNB for gas
-            if (rawAmountBigInt + gasReserve > bBal) {
-               rawAmountBigInt = bBal > gasReserve ? bBal - gasReserve : BigInt(0);
+            const gasReserve = parseUnits('0.005', 18);
+            if (rawAmountBigInt + gasReserve > bBal && bBal > gasReserve) {
+               rawAmountBigInt = bBal - gasReserve;
             }
          }
-      } else {
+      } else if (!isEnter && isConnected && userAddress) {
          const tBal = BigInt(tokenBalance);
-         if (rawAmountBigInt > tBal) {
+         if (rawAmountBigInt > tBal && tBal > BigInt(0)) {
             rawAmountBigInt = tBal;
          }
       }
@@ -351,8 +349,7 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
       if (data.code === 0) {
         setRoute({ 
           ...data.data.routeSummary, 
-          isManagedEnter: pool.manager === 'venus' || pool.manager === 'fintechai',
-          isExternal: pool.manager === 'fintechai' && isEnter
+          isManagedEnter: pool.manager === 'venus',
         });
       } else {
         throw new Error(data.message || 'No route found');
@@ -366,14 +363,18 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
   };
 
   const executeAction = async () => {
-    if (!route || !userAddress || !client || !publicClient) return;
+    if (!isConnected || !userAddress) {
+      connect();
+      return;
+    }
+    if (!route || !client || !publicClient) return;
     setExecuting(true);
     setErrorMsg('');
 
     try {
       const isEnter = action === 'enter';
       let targetToken = pool.address;
-      if (pool.manager === 'venus' || pool.manager === 'fintechai') {
+      if (pool.manager === 'venus') {
          targetToken = pool.underlyingToken!;
       }
 
@@ -383,71 +384,6 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
       if (tokenIn.toLowerCase() === tokenOut.toLowerCase()) {
          if (isEnter) tokenIn = NATIVE_BNB;
          else tokenOut = NATIVE_BNB; 
-      }
-      
-      if (pool.manager === 'fintechai') {
-         if (isEnter) {
-           setErrorMsg('Step 1/2: Swapping to USDC...');
-           const buildRes = await buildRoute(route, userAddress, userAddress, 100);
-           if (buildRes.code !== 0) throw new Error(buildRes.message);
-
-           if (tokenIn !== NATIVE_BNB) {
-             setErrorMsg('Approving input token...');
-             await client.writeContract({
-               address: tokenIn as `0x${string}`,
-               abi: erc20Abi,
-               functionName: 'approve',
-               args: [buildRes.data.routerAddress as `0x${string}`, BigInt(route.amountIn)],
-               account: userAddress,
-               chain: bsc
-             });
-             await new Promise(res => setTimeout(res, 5000));
-           }
-
-           setErrorMsg('Executing swap...');
-           await client.sendTransaction({
-             to: buildRes.data.routerAddress as `0x${string}`,
-             data: buildRes.data.data as `0x${string}`,
-             value: tokenIn === NATIVE_BNB ? BigInt(route.amountIn) : BigInt(0),
-             account: userAddress,
-             chain: bsc
-           });
-           
-           setErrorMsg('Step 2/2: Redirecting to FintechAi for Lock/Stake...');
-           await new Promise(res => setTimeout(res, 3000));
-           window.location.href = 'https://fintechai.finance/invite?code=0xafF5340ECFaf7ce049261cff193f5FED6BDF04E7';
-           
-           setIsOpen(false);
-           setExecuting(false);
-           return;
-         } else {
-           // On exit, they swap their returned USDC back to BNB
-           const buildRes = await buildRoute(route, userAddress, userAddress, 100);
-           if (buildRes.code !== 0) throw new Error(buildRes.message);
-           
-           setErrorMsg('Approving USDC for swap...');
-           await client.writeContract({
-             address: pool.underlyingToken as `0x${string}`,
-             abi: erc20Abi,
-             functionName: 'approve',
-             args: [buildRes.data.routerAddress as `0x${string}`, parseUnits(amount, 18)], // USDC is 18 decimals on BSC
-             account: userAddress,
-             chain: bsc
-           });
-           await new Promise(res => setTimeout(res, 5000));
-           
-           setErrorMsg('Executing USDC -> BNB Swap...');
-           await client.sendTransaction({
-             to: buildRes.data.routerAddress as `0x${string}`,
-             data: buildRes.data.data as `0x${string}`,
-             value: BigInt(0),
-             account: userAddress,
-             chain: bsc
-           });
-           setIsOpen(false);
-           setExecuting(false);
-           return;
-         }
       }
 
       // ---------------------------------
@@ -473,7 +409,7 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
              await new Promise(res => setTimeout(res, 5000));
            }
 
-           const swapTx = await client.sendTransaction({
+           await client.sendTransaction({
              to: buildRes.data.routerAddress as `0x${string}`,
              data: buildRes.data.data as `0x${string}`,
              value: tokenIn === NATIVE_BNB ? BigInt(route.amountIn) : BigInt(0),
@@ -626,9 +562,9 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
           </div>
         </div>
         <div className="text-right">
-          <div className="text-sm text-slate-500 mb-1">{pool.manager === 'fintechai' ? '' : 'Your Position'}</div>
+          <div className="text-sm text-slate-500 mb-1">Your Position</div>
           <div className="font-mono text-lg font-semibold text-white">
-            {pool.manager === 'fintechai' ? '' : parseFloat(formattedTokenBalance).toFixed(4)}
+            {isConnected ? parseFloat(formattedTokenBalance).toFixed(4) : '—'}
           </div>
         </div>
       </div>
@@ -639,12 +575,11 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
       <div className="flex gap-3">
         <button 
           onClick={() => { setAction('enter'); setIsOpen(!isOpen); setAmount(''); setRoute(null); }}
-          className={pool.manager === 'fintechai' ? "w-full py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-colors flex justify-center items-center gap-2" : "flex-1 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-colors flex justify-center items-center gap-2"}
+          className="flex-1 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-colors flex justify-center items-center gap-2"
         >
           <TrendingUp className="w-4 h-4" />
-          {pool.manager === 'fintechai' ? 'Deposit' : 'Enter Position'}
+          Enter Position
         </button>
-        {pool.manager !== 'fintechai' && (
         <button 
           disabled={!hasPosition}
           onClick={() => { setAction('exit'); setIsOpen(!isOpen); setAmount(''); setRoute(null); }}
@@ -653,13 +588,12 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
           <LogOut className="w-4 h-4" />
           Exit
         </button>
-        )}
       </div>
 
       {isOpen && (() => {
          const isEnter = action === 'enter';
          let targetToken = pool.address;
-         if (pool.manager === 'venus' || pool.manager === 'fintechai') targetToken = pool.underlyingToken!;
+         if (pool.manager === 'venus') targetToken = pool.underlyingToken!;
          
          let tokenIn = isEnter ? USDC : targetToken;
          let tokenOut = isEnter ? targetToken : USDC;
@@ -673,10 +607,12 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
          const outputSymbol = isEnter ? pool.symbol : (tokenOut === USDC ? 'USDC' : 'BNB');
 
          let displayBalance = '0';
-         if (action === 'enter') {
-           displayBalance = tokenIn === USDC ? usdcBalance : bnbBalance;
-         } else {
-           displayBalance = formattedTokenBalance;
+         if (isConnected) {
+           if (action === 'enter') {
+             displayBalance = tokenIn === USDC ? usdcBalance : bnbBalance;
+           } else {
+             displayBalance = formattedTokenBalance;
+           }
          }
 
          return (
@@ -684,21 +620,23 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
             <div className="flex justify-between text-sm font-medium text-slate-400 mb-2">
                <span>{action === 'enter' ? `Deposit ${inputSymbol}` : `Withdraw ${inputSymbol}`}</span>
                <div className="flex items-center gap-2">
-                 <span>Balance: {parseFloat(displayBalance).toFixed(4)}</span>
-                 <button
-                   type="button"
-                   onClick={() => {
-                     let maxAmount = displayBalance;
-                     if (action === "enter" && tokenIn === NATIVE_BNB) {
-                       const val = parseFloat(displayBalance) - 0.005;
-                       maxAmount = val > 0 ? val.toString() : "0";
-                     }
-                     fetchQuote(maxAmount);
-                   }}
-                   className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 active:scale-95 transition-all uppercase font-bold cursor-pointer"
-                 >
-                   max
-                 </button>
+                 <span>Balance: {isConnected ? parseFloat(displayBalance).toFixed(4) : '—'}</span>
+                 {isConnected && (
+                   <button
+                     type="button"
+                     onClick={() => {
+                       let maxAmount = displayBalance;
+                       if (action === "enter" && tokenIn === NATIVE_BNB) {
+                         const val = parseFloat(displayBalance) - 0.005;
+                         maxAmount = val > 0 ? val.toString() : "0";
+                       }
+                       fetchQuote(maxAmount);
+                     }}
+                     className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 active:scale-95 transition-all uppercase font-bold cursor-pointer"
+                   >
+                     max
+                   </button>
+                 )}
                </div>
             </div>
             <div className="relative mb-4">
@@ -719,14 +657,7 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
             
             {route && !errorMsg && (
               <div className="mb-4 space-y-2 bg-slate-900 rounded-lg p-3 text-sm">
-                {route.isExternal ? (
-                   <div className="flex justify-between text-slate-400">
-                     <span>Action</span>
-                     <span className="font-mono text-white text-xs">
-                        Redirect to FintechAi
-                     </span>
-                   </div>
-                ) : route.isManagedExit ? (
+                {route.isManagedExit ? (
                    <div className="flex justify-between text-slate-400">
                      <span>Expected Output</span>
                      <span className="font-mono text-white">
@@ -746,7 +677,7 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
                   <span>Routing</span>
                   <span>
                     <ArrowDownUp className="w-3 h-3 inline mr-1" />
-                    {pool.manager === 'fintechai' ? 'External Application' : pool.manager === 'venus' ? 'KyberSwap + Venus Protocol' : 'KyberSwap Aggregator'}
+                    {pool.manager === 'venus' ? 'KyberSwap + Venus Protocol' : 'KyberSwap Aggregator'}
                   </span>
                 </div>
               </div>
@@ -760,24 +691,33 @@ function PoolCard({ pool, userAddress }: { pool: typeof POOLS[0], userAddress: `
                     Yield and Fee Mechanics
                  </div>
                  <p className="text-slate-400 leading-relaxed">
-                    {pool.manager === 'fintechai' 
-                      ? "Yield on FintechAi is tracked and settled on their external staking dashboard. Swaps automatically process through USDC, capturing fee opportunities and routing into staking pools."
-                      : pool.manager === 'venus'
+                    {pool.manager === 'venus'
                       ? "Venus yields auto-compound directly into the token value (your vToken appreciates). Distributable XVS pool rewards can be monitored/claimed on the Venus Protocol app."
-                      : "Auto-compounding: Earned protocol fee and yields are continuously reinvested on BSC. Your position balance appreciates automatically over time on-chain without visual friction."
+                      : "Auto-compounding: Earned protocol fees and yields are continuously reinvested on BSC. Your position balance appreciates automatically over time on-chain without visual friction."
                     }
                  </p>
               </div>
             )}
 
-            <button
-               disabled={!route || executing || !!errorMsg}
-               onClick={executeAction}
-               className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-bold transition-all flex justify-center items-center gap-2"
-            >
-              {executing && <Loader2 className="w-4 h-4 animate-spin" />}
-              {executing ? 'Executing...' : 'Confirm Transaction'}
-            </button>
+            {!isConnected ? (
+              <button
+                 type="button"
+                 onClick={() => connect()}
+                 className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all flex justify-center items-center gap-2"
+              >
+                <ShieldCheck className="w-4 h-4" />
+                Connect Wallet to Deposit
+              </button>
+            ) : (
+              <button
+                 disabled={!route || executing || !!errorMsg}
+                 onClick={executeAction}
+                 className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-bold transition-all flex justify-center items-center gap-2"
+              >
+                {executing && <Loader2 className="w-4 h-4 animate-spin" />}
+                {executing ? 'Executing...' : 'Confirm Transaction'}
+              </button>
+            )}
          </div>
       )})()}
     </div>
