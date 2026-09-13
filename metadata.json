@@ -1,0 +1,6 @@
+{
+  "name": "Arbitrage Inception",
+  "description": "Smart DeFi Aggregator and Yield Optimization Platform utilizing KyberSwap API on BNB Chain.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
