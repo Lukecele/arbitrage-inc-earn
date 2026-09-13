@@ -1,5 +1,12 @@
 # Arbitrage Inception — Earn & Vaults
 
+[![CI](https://github.com/Lukecele/arbitrage-inc-earn/actions/workflows/ci.yml/badge.svg)](https://github.com/Lukecele/arbitrage-inc-earn/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Network: BSC](https://img.shields.io/badge/Network-BNB_Smart_Chain-F0B90B?logo=binance&logoColor=white)](https://bscscan.com)
+[![Next.js](https://img.shields.io/badge/Next.js-15_App_Router-black?logo=next.js&logoColor=white)](https://nextjs.org)
+[![KyberSwap](https://img.shields.io/badge/Router-KyberSwap_ZaaS-2CB680)](https://kyberswap.com)
+[![DeFi: Vaults](https://img.shields.io/badge/DeFi-Yield_Vaults-F3BA2F)](#)
+
 A multi-protocol yield aggregator and vault manager on BNB Smart Chain, designed to streamline entry into top DeFi yield strategies.
 
 **Live Application:** [https://arbitrage-inc-earn.vercel.app](https://arbitrage-inc-earn.vercel.app)  
