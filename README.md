@@ -80,6 +80,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
+## ⚖️ Open-Source Architecture & Regulatory Notice (MiCA Recital 22)
+
+This repository contains free, open-source client software (MIT License) developed and maintained by independent open-source software engineers and researchers.
+
+- **Non-Custodial Client:** This software functions strictly as a graphical user interface (GUI) and route aggregator for interacting with third-party decentralized liquidity protocols on BNB Smart Chain (KyberSwap, Venus Protocol, Lista DAO, pSTAKE, Stader Labs). It does not hold custody of user funds, operate a centralized exchange, or provide custodial financial services.
+- **MiCA Exemption (Recital 22):** Under **Regulation (EU) 2023/1114 (Markets in Crypto-Assets - MiCA)**, fully decentralized peer-to-peer crypto-asset services provided without intermediaries fall outside the scope of crypto-asset service regulations.
+- **Yield & Risk Notice:** Displayed APY values are third-party on-chain estimates derived from target protocol smart contracts and are not guaranteed returns.
+
+---
+
 ## License
 
 Released under the [MIT License](./LICENSE).
