@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Arbitrage Inception — Earn & Vaults",
+  "short_name": "Arb-Inc-Earn",
+  "version": "1.1.0",
+  "description": "Multi-protocol yield aggregator, liquid staking zap router, and vault manager on BNB Smart Chain.",
+  "license": "MIT",
+  "homepage": "https://arbitrage-inc-earn.vercel.app",
+  "main_platform": "https://arbitrage-inc.exchange",
+  "repository": "https://github.com/Lukecele/arbitrage-inc-earn",
+  "network": {
+    "name": "BNB Smart Chain",
+    "short_name": "BSC",
+    "chainId": 56,
+    "nativeCurrency": {
+      "name": "BNB",
+      "symbol": "BNB",
+      "decimals": 18
+    }
+  },
+  "architecture": {
+    "custody_model": "Non-custodial (peer-to-contract zap aggregator)",
+    "regulatory_framework": "MiCA Regulation (EU) 2023/1114 Recital 22 exemption",
+    "swap_routing": "KyberSwap Aggregator API v1",
+    "target_protocols": [
+      "Lista DAO (slisBNB liquid staking)",
+      "pSTAKE Finance (stkBNB liquid staking)",
+      "Stader Labs (BNBx liquid staking)",
+      "Venus Protocol (vUSDT, vUSDC lending money markets)"
+    ]
+  },
+  "contracts": {
+    "parent_token": {
+      "address": "0x5ee54869ecd5e752c31af095187326d4a4d50e1c",
+      "symbol": "ARB INC",
+      "network": "BNB Smart Chain"
+    }
+  },
+  "community": {
+    "telegram": "https://t.me/ArbitrageInception",
+    "twitter": "https://x.com/Arbitrageincept",
+    "security_contact": "luca.celebrano1@gmail.com"
+  }
+}

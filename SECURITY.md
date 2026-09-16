@@ -11,7 +11,7 @@
 If you discover a security vulnerability or unexpected smart contract interaction issue, please do NOT open a public GitHub issue.
 
 Please report vulnerabilities directly to:
-- **Email:** `security@arbitrage-inc.exchange`
+- **Email:** `luca.celebrano1@gmail.com`
 - **Telegram:** [Arbitrage Inception Telegram](https://t.me/ArbitrageInception)
 
 ### What to Include
