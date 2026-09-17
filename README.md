@@ -6,6 +6,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15_App_Router-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![KyberSwap](https://img.shields.io/badge/Router-KyberSwap_ZaaS-2CB680)](https://kyberswap.com)
 [![DeFi: Vaults](https://img.shields.io/badge/DeFi-Yield_Vaults-F3BA2F)](#)
+[![GitHub stars](https://img.shields.io/github/stars/arbincept/arbitrage-inc-earn?style=social)](https://github.com/arbincept/arbitrage-inc-earn)
 
 A multi-protocol yield aggregator and vault manager on BNB Smart Chain, designed to streamline entry into top DeFi yield strategies.
 
@@ -84,6 +85,20 @@ Arbitrage Inception Vaults aggregates prominent yield-bearing protocols on BNB C
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+---
+
+## 🔗 Ecosystem Integration
+
+This vault interface is an open-source component of the **[Arbitrage Inception Ecosystem](https://arbitrage-inc.exchange)** ([github.com/arbincept](https://github.com/arbincept)), connecting decentralized lending and liquid staking protocols on BNB Smart Chain.
+
+---
+
+## ⭐ Support the Project
+
+If you find this yield manager or Zap routing architecture useful for your research or DeFi development, please consider dropping a **Star** on GitHub. It directly supports continuous open-source maintenance!
+
+[![GitHub stars](https://img.shields.io/github/stars/arbincept/arbitrage-inc-earn?style=social)](https://github.com/arbincept/arbitrage-inc-earn)
 
 ---
 
