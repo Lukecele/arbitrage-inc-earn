@@ -16,7 +16,7 @@
     "postinstall": "node -e \"console.log('\\x1b[36m\\n⭐ Thank you for using Arbitrage Inception Earn! Please star it on GitHub: https://github.com/arbincept/arbitrage-inc-earn\\x1b[0m\\n')\" || true"
   },
   "dependencies": {
-    "@google/genai": "^2.4.0",
+    "@google/genai": "^2.22.0",
     "@hookform/resolvers": "^5.2.1",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
