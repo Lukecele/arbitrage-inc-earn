@@ -1,12 +1,16 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { createWalletClient, custom, publicActions, WalletClient, Address, PublicClient, createPublicClient, http } from 'viem';
+import { createWalletClient, custom, publicActions, WalletClient, Address, PublicClient, createPublicClient, http, fallback } from 'viem';
 import { bsc } from 'viem/chains';
 
 export const bscPublicClient = createPublicClient({
   chain: bsc,
-  transport: http('https://bsc-dataseed.binance.org/')
+  transport: fallback([
+    http('https://binance.nodereal.io'),
+    http('https://bsc-rpc.publicnode.com'),
+    http('https://1rpc.io/bnb'),
+  ])
 });
 
 interface Web3ContextType {
