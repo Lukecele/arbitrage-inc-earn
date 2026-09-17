@@ -5,15 +5,15 @@
   "author": "Lukecele",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lukecele/arbitrage-inc-earn.git"
+    "url": "https://github.com/arbincept/arbitrage-inc-earn.git"
   },
   "scripts": {
-    "dev": "node -e \"console.log('\\x1b[35m\\n⚡ Arbitrage Inception Earn | Open-Source Staking & RevShare\\x1b[0m\\x1b[33m\\n⭐ Support on GitHub: https://github.com/Lukecele/arbitrage-inc-earn\\x1b[0m\\n')\" && next dev",
+    "dev": "node -e \"console.log('\\x1b[35m\\n⚡ Arbitrage Inception Earn | Open-Source Staking & RevShare\\x1b[0m\\x1b[33m\\n⭐ Support on GitHub: https://github.com/arbincept/arbitrage-inc-earn\\x1b[0m\\n')\" && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "clean": "next clean",
-    "postinstall": "node -e \"console.log('\\x1b[36m\\n⭐ Thank you for using Arbitrage Inception Earn! Please star it on GitHub: https://github.com/Lukecele/arbitrage-inc-earn\\x1b[0m\\n')\" || true"
+    "postinstall": "node -e \"console.log('\\x1b[36m\\n⭐ Thank you for using Arbitrage Inception Earn! Please star it on GitHub: https://github.com/arbincept/arbitrage-inc-earn\\x1b[0m\\n')\" || true"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

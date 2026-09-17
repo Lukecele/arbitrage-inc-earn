@@ -7,7 +7,7 @@
   "license": "MIT",
   "homepage": "https://arbitrage-inc-earn.vercel.app",
   "main_platform": "https://arbitrage-inc.exchange",
-  "repository": "https://github.com/Lukecele/arbitrage-inc-earn",
+  "repository": "https://github.com/arbincept/arbitrage-inc-earn",
   "network": {
     "name": "BNB Smart Chain",
     "short_name": "BSC",

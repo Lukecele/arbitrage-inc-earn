@@ -15,7 +15,7 @@ export function Footer() {
           <span>·</span>
           <a href="https://arbitrage-inc.exchange/privacy-policy" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">Privacy</a>
           <span>·</span>
-          <a href="https://github.com/Lukecele/arbitrage-inc-earn" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">GitHub (MIT)</a>
+          <a href="https://github.com/arbincept/arbitrage-inc-earn" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">GitHub (MIT)</a>
         </div>
       </div>
     </footer>
