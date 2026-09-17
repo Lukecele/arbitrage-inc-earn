@@ -18,7 +18,7 @@ A multi-protocol yield aggregator and vault manager on BNB Smart Chain, designed
 ## Architecture & Yield Topology
 
 ```mermaid
-flowchart LR
+flowchart TD
     User(["User Wallet<br>(BNB or any ERC-20)"]) --> Kyber["KyberSwap Aggregator API<br>(Optimal Route Calculation)"]
     Kyber --> Zap["Zap Execution Flow<br>(Viem / Wagmi Single Tx)"]
     
