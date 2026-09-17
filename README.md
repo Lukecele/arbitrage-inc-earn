@@ -19,14 +19,14 @@ A multi-protocol yield aggregator and vault manager on BNB Smart Chain, designed
 
 ```mermaid
 flowchart LR
-    User(["User Wallet\n(BNB or any ERC-20)"]) --> Kyber["KyberSwap Aggregator API\n(Optimal Route Calculation)"]
-    Kyber --> Zap["Zap Execution Flow\n(Viem / Wagmi Single Tx)"]
+    User(["User Wallet<br>(BNB or any ERC-20)"]) --> Kyber["KyberSwap Aggregator API<br>(Optimal Route Calculation)"]
+    Kyber --> Zap["Zap Execution Flow<br>(Viem / Wagmi Single Tx)"]
     
     subgraph YieldVaults ["Target Protocols (BNB Chain)"]
-        Zap --> Lista["Lista DAO (slisBNB)\nLiquid Staking Yield"]
-        Zap --> PStake["pSTAKE Finance (stkBNB)\nAuto-Compounding Rewards"]
-        Zap --> Stader["Stader Labs (BNBx)\nLiquid Staking APR"]
-        Zap --> Venus["Venus Protocol (vTokens)\nLending Money Market Supply"]
+        Zap --> Lista["Lista DAO (slisBNB)<br>Liquid Staking Yield"]
+        Zap --> PStake["pSTAKE Finance (stkBNB)<br>Auto-Compounding Rewards"]
+        Zap --> Stader["Stader Labs (BNBx)<br>Liquid Staking APR"]
+        Zap --> Venus["Venus Protocol (vTokens)<br>Lending Money Market Supply"]
     end
 ```
 
