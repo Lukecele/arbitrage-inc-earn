@@ -102,12 +102,12 @@ If you find this yield manager or Zap routing architecture useful for your resea
 
 ---
 
-## ⚖️ Open-Source Architecture & Regulatory Notice (MiCA Recital 22)
+## ⚖️ Open-Source Architecture & Regulatory Notice (MiCA Recital 22 & D.Lgs. 129/2024)
 
 This repository contains free, open-source client software (MIT License) developed and maintained by independent open-source software engineers and researchers.
 
 - **Non-Custodial Client:** This software functions strictly as a graphical user interface (GUI) and route aggregator for interacting with third-party decentralized liquidity protocols on BNB Smart Chain (KyberSwap, Venus Protocol, Lista DAO, pSTAKE, Stader Labs). It does not hold custody of user funds, operate a centralized exchange, or provide custodial financial services.
-- **MiCA Exemption (Recital 22):** Under **Regulation (EU) 2023/1114 (Markets in Crypto-Assets - MiCA)**, fully decentralized peer-to-peer crypto-asset services provided without intermediaries fall outside the scope of crypto-asset service regulations.
+- **MiCA & D.Lgs. 129/2024 Exemption (Recital 22):** Under **Regulation (EU) 2023/1114 (Markets in Crypto-Assets - MiCA)** and national transposing legislation (**Italian D.Lgs. 129/2024** transitioning from the legacy OAM VASP register to CONSOB / Banca d'Italia CASP oversight), fully decentralized peer-to-peer crypto-asset services provided without intermediaries fall outside the scope of crypto-asset service provider (CASP) regulations.
 - **Yield & Risk Notice:** Displayed APY values are third-party on-chain estimates derived from target protocol smart contracts and are not guaranteed returns.
 
 ---

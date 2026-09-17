@@ -20,7 +20,7 @@
   },
   "architecture": {
     "custody_model": "Non-custodial (peer-to-contract zap aggregator)",
-    "regulatory_framework": "MiCA Regulation (EU) 2023/1114 Recital 22 exemption",
+    "regulatory_framework": "MiCA Regulation (EU) 2023/1114 Recital 22 & Italian D.Lgs. 129/2024 non-custodial exemption",
     "swap_routing": "KyberSwap Aggregator API v1",
     "target_protocols": [
       "Lista DAO (slisBNB liquid staking)",

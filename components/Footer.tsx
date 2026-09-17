@@ -7,7 +7,7 @@ export function Footer() {
           <p className="mt-1 text-slate-500 max-w-xl leading-relaxed">
             Non-custodial, open-source client interface (MIT License) routing through KyberSwap Aggregator and public BNB Smart Chain protocol contracts.
             Displayed APY values are third-party on-chain estimates, not guaranteed returns.
-            Pursuant to Recital 22 of Regulation (EU) 2023/1114 (MiCA), fully decentralized peer-to-peer interactions without financial custody fall outside crypto-asset service regulations.
+            Pursuant to Recital 22 of Regulation (EU) 2023/1114 (MiCA) and Italian D.Lgs. 129/2024, fully decentralized peer-to-peer interactions without financial custody fall outside crypto-asset service (CASP) regulations.
           </p>
         </div>
         <div className="flex items-center gap-4 text-slate-400 flex-shrink-0">
