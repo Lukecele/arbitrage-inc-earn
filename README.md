@@ -1,6 +1,6 @@
 # Arbitrage Inception — Earn & Vaults
 
-[![CI](https://github.com/Lukecele/arbitrage-inc-earn/actions/workflows/ci.yml/badge.svg)](https://github.com/Lukecele/arbitrage-inc-earn/actions)
+[![CI](https://github.com/arbincept/arbitrage-inc-earn/actions/workflows/ci.yml/badge.svg)](https://github.com/arbincept/arbitrage-inc-earn/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Network: BSC](https://img.shields.io/badge/Network-BNB_Smart_Chain-F0B90B?logo=binance&logoColor=white)](https://bscscan.com)
 [![Next.js](https://img.shields.io/badge/Next.js-15_App_Router-black?logo=next.js&logoColor=white)](https://nextjs.org)
@@ -69,7 +69,7 @@ Arbitrage Inception Vaults aggregates prominent yield-bearing protocols on BNB C
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Lukecele/arbitrage-inc-earn.git
+   git clone https://github.com/arbincept/arbitrage-inc-earn.git
    cd arbitrage-inc-earn
    ```
 
